@@ -119,7 +119,9 @@ export default function Board() {
             <HwButton onClick={stop} className="before:h-2.5 before:w-2.5 before:bg-led-coral before:shadow-[0_0_6px_rgba(255,92,77,0.6)] before:content-['']">
               Stop
             </HwButton>
-            <HwButton href="/admin">Admin</HwButton>
+            <HwButton href="/admin" className="hidden admin:inline-flex">
+              Admin
+            </HwButton>
           </>
         }
       />
@@ -128,12 +130,14 @@ export default function Board() {
         {clips.length === 0 ? (
           <div className="col-span-full rounded-[14px] border border-dashed border-line px-6 py-12 text-center text-muted">
             No pads on the board yet.
-            <br />
-            Add clips in the{" "}
-            <Link href="/admin" className="text-led-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-led-amber">
-              admin panel
-            </Link>{" "}
-            and they show up here for everyone.
+            <span className="hidden admin:inline">
+              <br />
+              Add clips in the{" "}
+              <Link href="/admin" className="text-led-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-led-amber">
+                admin panel
+              </Link>{" "}
+              and they show up here for everyone.
+            </span>
           </div>
         ) : (
           clips.map((clip, i) => (

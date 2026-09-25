@@ -34,6 +34,9 @@
   --font-lcd: var(--font-vt323), monospace;
 }
 
+/* `admin:` applies when the layout has stamped data-admin on <html>, i.e. the visitor may reach admin. */
+@custom-variant admin (&:where(html[data-admin] *, html[data-admin]));
+
 body {
   background: radial-gradient(1200px 600px at 50% -10%, #191a21 0%, var(--color-chassis) 55%, var(--color-chassis-deep) 100%);
 }
